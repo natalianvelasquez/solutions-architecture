@@ -1,0 +1,40 @@
+<div class="mat-elevation-z8">
+  Total Results: {{ totalResults }}
+
+  <mat-table [dataSource]="dataSource.data" matSort>
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstname">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.firstname }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.lastname }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.email }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createdate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Create Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.createdate }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastmodifieddate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Modified Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.lastmodifieddate }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>
